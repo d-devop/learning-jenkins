@@ -11,7 +11,7 @@ pipeline {
   }
 
   triggers {
-    cron('0 * * * *')
+    //cron('0 * * * *')
     pollSCM('* * * * *')
   }
 
@@ -26,12 +26,6 @@ pipeline {
 
   stages {
     stage('New') {
-      when {
-        expression {
-          params.APP_URL == "google.com"
-        }
-
-      }
       environment {
         XYZ="xyz"
       }
@@ -43,3 +37,4 @@ pipeline {
 
       }
     }
+}
